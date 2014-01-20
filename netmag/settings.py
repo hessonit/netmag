@@ -88,3 +88,7 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (
     '/home/adam/Pulpit/python/projekt/netmag/netmag/templates/',
 )
+
+STATICFILES_DIRS = (
+    '/home/adam/Pulpit/python/projekt/netmag/netmag/static/',
+)
