@@ -1,5 +1,3 @@
-netmag
-
-Projekt na kurs pythona
+mały blog w django
 
 ======
