@@ -20,3 +20,11 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog.views.post', args=[self.slug])
 
+class Comment(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    author = models.CharField(max_length=60)
+    content = models.TextField()
+    post = models.ForeignKey(Post)
+
+    def __unicode__(self):
+        return "%s: %s" % (self.post, self.content[:60])

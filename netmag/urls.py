@@ -12,4 +12,6 @@ urlpatterns = patterns('',
     url(r'^$', "blog.views.main"),
     #url(r'^$', 'blog.views.index'),
     url(r'^(?P<slug>[\w\-]+)/$', 'blog.views.post'),
+    url(r"^(\d+)/$", "blog.views.post"),
+    url(r'^(?P<slug>[\w\-]+)/add_comment/$', 'blog.views.add_comment'),
 )

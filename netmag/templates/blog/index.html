@@ -40,7 +40,9 @@
                 <ul>
                     <div class="time">{{post.created|date}}</div>
                     <div class="body">{{post.content|linebreaks}}</div>
-
+                    <div class="commentlink">
+                    <a href="{{post.get_absolute_url}}">Comments ({{ post.comment_set.count }})</a>
+                    </div>
                 </ul>
             {% endfor %}
 

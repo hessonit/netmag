@@ -18,4 +18,32 @@
         </p>
         {{post.content|safe}}
     </article>
+
+
+    <!-- Comments  -->
+    {% if comments %}
+        <p>Comments:</p>
+    {% endif %}
+
+    {% for comment in comments %}
+        <div class="comment">
+            <div class="time">{{ comment.created }} | {{ comment.author }}</div>
+            <div class="body">{{ comment.content|linebreaks }}</div>
+        </div>
+    {% endfor %}
+
+       <div id="addc">Add a comment</div>
+        <form action="{% url 'blog.views.add_comment' post.slug %}" method="POST">{% csrf_token %}
+        <div id="cform">
+        Name: {{ form.author }}
+        <p>{{ form.content }}</p>
+         </div>
+        <div id="submit"><input type="submit" value="Submit"></div>
+        </form>
+
+
+    <!-- Comment form  -->
+
+
+
     {% endblock %}
