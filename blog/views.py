@@ -68,11 +68,3 @@ def add_comment(request, slug):
         comment.save()
     return HttpResponseRedirect(reverse("blog.views.post", args=[slug]))
 
-
-
-def post_detail(request, slug):
-    post = Post.objects.get(slug=slug)
-    comments = Comment.objects.filter(post=post)
-    dic = {'post': post, 'user': request.user, 'comments': comments, 'form': CommentForm()}
-    dic.update(csrf(request))
-    return dic
